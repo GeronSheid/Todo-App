@@ -1,0 +1,51 @@
+.checkbox {
+
+    input[type="checkbox"] {
+        position: relative;
+        width: 24px;
+        height: 24px;
+
+        border: 1px solid #333;
+        border-radius: 50%;
+        outline: none;
+
+        transition: border-color .3s ease-in-out;
+
+        -webkit-appearance: none;
+        appearance: none;
+    }
+
+    input[type="checkbox"]::after {
+        content: '';
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        width: 18px;
+        height: 18px;
+
+        background-color: transparent;
+        border-radius: 50%;
+
+        transition: background-color .3s ease-in-out;
+    }
+
+    &:focus {
+        input[type="checkbox"] {
+            border-color: #c987fb;
+        }
+    }
+
+    &_checked {
+        input[type="checkbox"]::after {
+            background-color: #c987fb;
+        }
+    }
+}
+
+@media (any-hover: hover) {
+    .checkbox:hover {
+        input[type="checkbox"] {
+            border-color: #c987fb;
+        }
+    }
+}

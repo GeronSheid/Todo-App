@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { Input } from "../Input/Input"
+import { TodoItem } from "../TodoItem/TodoItem";
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           type="text"
         />
       </div>
+      <TodoItem />
     </>
   )
 }
