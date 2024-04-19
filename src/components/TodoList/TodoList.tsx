@@ -1,9 +1,12 @@
-import { useAppSelector } from '../../lib/hooks';
+import { FC } from 'react';
 import { TodoItem } from '../TodoItem/TodoItem';
+import { IList} from '../TodoItem/TodoItem.type';
 import styles from './TodoList.module.scss';
 
-export const TodoList = () => {
-    const todos = useAppSelector(state => state.todo.todoList);
+
+
+
+export const TodoList: FC<IList> = ({todos}) => {
     
   return (
     <div className={styles.todoList}>

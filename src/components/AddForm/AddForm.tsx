@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Input } from '../Input/Input';
+import { Input } from '../UI/Input/Input';
 import { useAppDispatch } from '../../lib/hooks';
 import { addTodo } from '../../store/todoSlice';
 import styles from './AddForm.module.scss';

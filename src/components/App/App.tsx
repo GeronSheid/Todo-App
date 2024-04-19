@@ -1,14 +1,17 @@
-import { TodoList } from "../TodoList/TodoList";
 import { AddForm } from "../AddForm/AddForm";
-import { Container } from "../Container/Container";
+import { Container } from "../UI/Container/Container";
+import { AppRouter } from "../../shared/AppRouter/AppRouter";
+
+import { Header } from "../UI/Header/Header";
 
 
 function App() {
   return (
     <>
+      <Header/>
       <Container>
         <AddForm />
-        <TodoList/>
+        <AppRouter />
       </Container>
     </>
   )
