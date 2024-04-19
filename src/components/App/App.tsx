@@ -1,6 +1,8 @@
 import { useState } from "react"
 import { Input } from "../Input/Input"
 import { TodoItem } from "../TodoItem/TodoItem";
+import { TodoList } from "../TodoList/TodoList";
+import { AddForm } from "../AddForm/AddForm";
 
 
 function App() {
@@ -9,16 +11,8 @@ function App() {
 
   return (
     <>
-      <div>
-        <h1>Todo list</h1>
-        <Input 
-          value={inputValue} 
-          onChange={(e) => setInputValue(e.target.value)} 
-          placeholder="Введите напоминание" 
-          type="text"
-        />
-      </div>
-      <TodoItem />
+      <AddForm />
+      <TodoList/>
     </>
   )
 }

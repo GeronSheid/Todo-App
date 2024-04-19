@@ -1,32 +1,33 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import type { ITodo } from "../components/TodoItem/TodoItem.type";
 
-interface ITodo {
-    id: string,
-    title: string,
-    isFulfilled: boolean
+interface ITodos {
+    todoList: ITodo[];
 }
 
-const initialState: ITodo[] = []
+const initialState: ITodos = {
+    todoList: []
+}
 
 const todoSlice = createSlice({
     name: "todo",
     initialState,
     reducers: {
         addTodo(state, action: PayloadAction<string>) {
-            state.push({
+            state.todoList.push({
                 id: new Date().toISOString(),
                 title: action.payload,
                 isFulfilled: false,
             })
         },
         toggleTodo(state, action: PayloadAction<string>) {
-            const todoToToggle = state.find(todo => todo.id === action.payload);
+            const todoToToggle = state.todoList.find(todo => todo.id === action.payload);
             if(todoToToggle) {
                 todoToToggle.isFulfilled = !todoToToggle?.isFulfilled;
             }
         },
         deleteTodo(state, action: PayloadAction<string>) {
-            state.filter(todo => todo.id !== action.payload);
+            state.todoList = state.todoList.filter(todo => todo.id !== action.payload);
         }
     }
 })

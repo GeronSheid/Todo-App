@@ -1,25 +1,22 @@
-import React, { useState, FC } from 'react'
+import { useState, FC } from 'react'
 import styles from './Checkbox.module.scss';
 
 type TProps = {
-    checked: boolean
+    checked: boolean;
+    id?: string;
+    onClick: (e: React.MouseEvent<HTMLInputElement, MouseEvent>) => void;
 }
 
-export const Checkbox: FC<TProps> = ({checked}) => {
-
-    const defaultChecked = checked ? checked : false;
-    const [isChecked, setIsChecked] = useState<boolean>(defaultChecked);
-
-    const isCheckedStyle = `${styles.checkbox} ${isChecked ? styles.checkbox_checked : ''}`;
-
+export const Checkbox: FC<TProps> = ({checked, id, onClick}) => {
+    const isCheckedStyle = `${styles.checkbox} ${checked ? styles.checkbox_checked : ''}`
   return (
     <div className={isCheckedStyle}>
-        <label>
             <input 
+                id={id}
                 type="checkbox" 
-                onChange={() => setIsChecked(prev => !prev)}
+                defaultChecked={checked}
+                onClick={(e) => onClick(e)}
             />
-        </label>
     </div>
   )
 }

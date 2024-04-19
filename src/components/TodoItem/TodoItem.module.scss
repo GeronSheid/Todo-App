@@ -1,0 +1,53 @@
+.todoItem {
+    width: 100%;
+    max-width: 30dvh;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0.5em 2em;
+    gap: 30px;
+
+    border: 1px solid #333;
+    border-radius: 2em;
+
+    label {
+        flex: 1 0 auto;
+
+        transition: color .3s ease-in-out;
+
+        cursor: pointer;
+    }
+
+    button {
+        width: 24px;
+        height: 24px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        color: #333;
+        background-color: transparent;
+        border: 1px solid #333;
+        outline: none;
+        border-radius: 50%;
+
+        transition: color .3s ease-in-out, border-color .3s ease-in-out;
+
+        cursor: pointer;
+    }
+}
+
+@media (any-hover: hover) {
+    .todoItem {
+        button:hover {
+            color: #c987fb;
+            border-color: #c987fb;
+        }
+        label:hover {
+            color: #c987fb;
+        }
+    }
+}
