@@ -17,7 +17,6 @@ const routes: IRoute[] = [
 
 export const AppRouter = () => {
 
-
   return (
     <Routes>
         {routes.map(route => 

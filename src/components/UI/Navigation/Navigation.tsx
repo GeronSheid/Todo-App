@@ -1,5 +1,7 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styles from './Navigation.module.scss';
+
+
 
 export const Navigation = () => {
 
@@ -7,14 +9,16 @@ export const Navigation = () => {
         {label: 'Все дела', route: '/'},
         {label: 'Не выполненные дела', route: '/undone'},
         {label: 'Выполненные дела', route: '/done'},
-    ]
+    ] 
+
+    const isActive = ({isActive}: {isActive: boolean}) => isActive ? styles.link_active : styles.link;
 
   return (
     <nav className={styles.nav}>
         <ul>
             {links.map(link => (
                 <li>
-                    <Link to={link.route}>{link.label}</Link>
+                    <NavLink className={isActive} to={link.route}>{link.label}</NavLink>
                 </li>
             ))}
         </ul>

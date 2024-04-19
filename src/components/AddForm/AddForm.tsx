@@ -3,6 +3,7 @@ import { Input } from '../UI/Input/Input';
 import { useAppDispatch } from '../../lib/hooks';
 import { addTodo } from '../../store/todoSlice';
 import styles from './AddForm.module.scss';
+import { Button } from '../UI/Button/Button';
 
 export const AddForm = () => {
     const [inputValue, setInputValue] = useState<string>('');
@@ -20,10 +21,10 @@ export const AddForm = () => {
         <Input 
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)} 
-          placeholder="Введите текст напоминания" 
+          placeholder="Введите описание задачи" 
           type="text"
         />
-        <button>Добавить в список дел</button>
+        <Button type='submit'>Добавить задачу</Button>
     </form>
   )
 }

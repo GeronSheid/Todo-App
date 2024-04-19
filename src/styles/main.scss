@@ -1,6 +1,14 @@
 @import 'reset';
 @import 'normalize';
 
+body {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+  }
+
 .container {
     width: 100%;
     max-width: 1440px;

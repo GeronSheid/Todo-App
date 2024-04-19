@@ -1,0 +1,38 @@
+.btn {
+    width: 100%;
+    min-width: fit-content;
+    max-width: 20%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 1em 2em;
+
+    color: #333;
+    background-color: transparent;
+    border: 1px solid #333;
+    outline: none;
+    border-radius: 2em;
+
+    transition: color .3s ease-in-out, border-color .3s ease-in-out;
+
+    cursor: pointer;
+
+    &:focus {
+        color: #c987fb;
+        border-color: #c987fb;
+    }
+
+    &:active {
+        color: #ba63fc;
+        border-color: #ba63fc;
+    }
+}
+
+@media (any-hover: hover) {
+    .btn:hover {
+        color: #c987fb;
+        border-color: #c987fb;
+    }
+}
