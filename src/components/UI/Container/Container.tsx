@@ -2,10 +2,9 @@ import { FC } from "react";
 
 interface IContainer {
     children: React.ReactNode;
-    headerContainer?: boolean;
 }
 
-export const Container: FC<IContainer> = ({children, headerContainer}) => {
+export const Container: FC<IContainer> = ({children}) => {
   return (
     <div className='container'>
         {children}
