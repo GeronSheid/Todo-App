@@ -1,4 +1,4 @@
-import { useState, FC } from 'react'
+import { FC } from 'react'
 import styles from './Checkbox.module.scss';
 
 type TProps = {
