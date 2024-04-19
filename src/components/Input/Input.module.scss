@@ -1,0 +1,39 @@
+.input {
+    &_text {
+        width: 100%;
+        padding: 1em 2em;
+
+        font-size: 16px;
+
+        outline: none;
+        border: 1px solid #333;
+        border-radius: 2em;
+
+        transition: border-color .3s ease-in-out, box-shadow .3s ease-in-out;
+
+        &::placeholder {
+            color: #333;
+            transition: color .3s ease-in-out;
+            
+        }
+        &:focus {
+            border-color: #c987fb;
+            box-shadow: 2px 2px 10px 3px inset #c987fb;
+            &::placeholder {
+                color: #c987fb;
+            }
+        }
+    }
+}
+
+@media (any-hover: hover) {
+    .input {
+        &_text:hover {
+            border-color: #c987fb;
+            box-shadow: 2px 2px 10px 3px inset #c987fb;
+            &::placeholder {
+                color: #c987fb;
+            }
+        }
+    }
+}
