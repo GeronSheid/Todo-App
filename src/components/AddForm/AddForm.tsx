@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Input } from '../Input/Input';
 import { useAppDispatch } from '../../lib/hooks';
 import { addTodo } from '../../store/todoSlice';
+import styles from './AddForm.module.scss';
 
 export const AddForm = () => {
     const [inputValue, setInputValue] = useState<string>('');
@@ -9,11 +10,13 @@ export const AddForm = () => {
     
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        if(!inputValue) return
         dispatch(addTodo(inputValue));
+        setInputValue('');
     }
     
   return (
-    <form onSubmit={(e) => handleSubmit(e)}>
+    <form className={styles.addForm} onSubmit={(e) => handleSubmit(e)}>
         <Input 
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)} 

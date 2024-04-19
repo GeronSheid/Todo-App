@@ -1,18 +1,15 @@
-import { useState } from "react"
-import { Input } from "../Input/Input"
-import { TodoItem } from "../TodoItem/TodoItem";
 import { TodoList } from "../TodoList/TodoList";
 import { AddForm } from "../AddForm/AddForm";
+import { Container } from "../Container/Container";
 
 
 function App() {
-
-  const [inputValue, setInputValue] = useState<string>('');
-
   return (
     <>
-      <AddForm />
-      <TodoList/>
+      <Container>
+        <AddForm />
+        <TodoList/>
+      </Container>
     </>
   )
 }
