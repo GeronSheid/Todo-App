@@ -1,7 +1,7 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import type { ITodo } from "../components/TodoItem/TodoItem.type";
 
-interface ITodos {
+export interface ITodos {
     todoList: ITodo[];
 }
 
